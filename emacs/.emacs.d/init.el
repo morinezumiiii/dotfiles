@@ -1,8 +1,3 @@
-;; load path settings
-(setq load-path (append
-                 '("~/.emacs.d")
-                 load-path))
-
 ;; load path under the ~/.emacs.d/site-lisp
 (let ((default-directory (expand-file-name "~/.emacs.d/site-lisp")))
   (add-to-list 'load-path default-directory)
@@ -18,27 +13,18 @@
 (defvar installing-package-list
   '(
     init-loader
-    revive
-    haskell-mode
+    magit
+    tabbar
+    flycheck
     google-c-style
     js2-mode
     markdown-mode
     multi-web-mode
     arduino-mode
-    magit
-    multi-term
-    nodejs-repl
-    tabbar
-    direx
-    anything
+    csharp-mode
     color-theme
     color-theme-solarized
     color-theme-sanityinc-tomorrow
-    csharp-mode
-    d-mode
-    flymake
-    helm
-    migemo
     ))
 
 (let ((not-installed (loop for x in installing-package-list

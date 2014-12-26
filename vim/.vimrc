@@ -1,5 +1,10 @@
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
 if has('vim_starting')
-  set nocompatible " Be iMproved
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
 
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -8,43 +13,46 @@ endif
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
+" Let NeoBundle manage NeoBundle
+" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'Shougo/unite.vim'
-
 NeoBundle 'scrooloose/nerdtree'
-
 "NeoBundle 'tpope/vim-fugitive'
-
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-surround'
-
 NeoBundle 'tomtom/tcomment_vim'
-
 NeoBundle 'nathanaelkane/vim-indent-guides'
-
 NeoBundle 'vim-scripts/AnsiEsc.vim'
-
 NeoBundle 'bronson/vim-trailing-whitespace'
-
 NeoBundle 'w0ng/vim-hybrid'
-
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
-
 NeoBundle 'elzr/vim-json'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'digitaltoad/vim-jade'
 
+
 call neobundle#end()
 
+" Required:
 filetype plugin indent on
 
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
 NeoBundleCheck
 
+
+
+
+" My settings:
 set tags=~/.tags
 set noswapfile
 set ruler

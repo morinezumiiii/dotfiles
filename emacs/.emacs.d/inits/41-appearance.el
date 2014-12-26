@@ -32,24 +32,10 @@
 ;; ABCDEFGHIJKLMNOP
 ;; abcdefghijklmnop
 ;; 0123456789012345
-;; Ç†Ç¢Ç§Ç¶Ç®
-;(set-face-attribute 'default nil
-;                    :family "Migu 1M Regular"
-;                    :height 110)
-;(set-fontset-font
-; nil 'japanese-jisx0208
-; (font-spec :family "Migu 1M Regular"))
-;(setq face-font-rescale-alist
-;      '((".*Migu 1M Regular*." . 1.0)))
-(set-face-attribute 'default nil :family "Inconsolata" :height 115)
+;; Å†Ç¢Å§Ç¶Å®
+(set-face-attribute 'default nil :family "Ricty" :height 100)
 (set-fontset-font (frame-parameter nil 'font)
                   'japanese-jisx0208
-                  (cons "Ricty Discord" "iso10646-1"))
-(set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0212
-                  (cons "Ricty Discord" "iso10646-1"))
-(set-fontset-font (frame-parameter nil 'font)
-                  'katakana-jisx0201
-                  (cons "Ricty Discord" "iso10646-1"))
-(setq face-font-rescase-alist
-      ((".*Ricty*.". 1.0)))
+                  (font-spec :family "Ricty"))
+(add-to-list 'face-font-rescale-alist
+             '(".*Ricty.*" . 1.2))

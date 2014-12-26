@@ -1,0 +1,6 @@
+*.el~
+auto-save-list/
+elpa/
+eshell/
+history
+url/
